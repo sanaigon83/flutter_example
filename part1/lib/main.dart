@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,22 +25,22 @@ class HomePage extends StatelessWidget {
       {
         "category": "수제버거",
         "imgUrl":
-        "https://i.ibb.co/HBGKYn4/foodiesfeed-com-summer-juicy-beef-burger.jpg",
+            "https://i.ibb.co/HBGKYn4/foodiesfeed-com-summer-juicy-beef-burger.jpg",
       },
       {
         "category": "건강식",
         "imgUrl":
-        "https://i.ibb.co/mB5YNs2/foodiesfeed-com-pumpkin-soup-with-pumpkin-seeds-on-top.jpg",
+            "https://i.ibb.co/mB5YNs2/foodiesfeed-com-pumpkin-soup-with-pumpkin-seeds-on-top.jpg",
       },
       {
         "category": "한식",
         "imgUrl":
-        "https://i.ibb.co/Kzzpc97/Beautiful-vibrant-shot-of-traiditonal-Korean-meals.jpg",
+            "https://i.ibb.co/Kzzpc97/Beautiful-vibrant-shot-of-traiditonal-Korean-meals.jpg",
       },
       {
         "category": "디저트",
         "imgUrl":
-        "https://i.ibb.co/DL5vJVZ/foodiesfeed-com-carefully-putting-a-blackberry-on-tiramisu.jpg",
+            "https://i.ibb.co/DL5vJVZ/foodiesfeed-com-carefully-putting-a-blackberry-on-tiramisu.jpg",
       },
       {
         "category": "피자",
@@ -50,7 +49,7 @@ class HomePage extends StatelessWidget {
       {
         "category": "볶음밥",
         "imgUrl":
-        "https://i.ibb.co/yQDkq2X/foodiesfeed-com-hot-shakshuka-in-a-cast-iron-pan.jpg",
+            "https://i.ibb.co/yQDkq2X/foodiesfeed-com-hot-shakshuka-in-a-cast-iron-pan.jpg",
       },
     ];
 
@@ -201,6 +200,7 @@ class HomePage extends StatelessWidget {
           // 특정 비율로 위젯을 보여주기
           AspectRatio(
             aspectRatio: 12 / 4,
+
             /// 이벤트 배너 리스트
             /// 스크롤을 하는데, 특정 항목이 스냅이 걸리도록 만들고 싶은 경우 PageView를 사용한다.
             child: PageView(
@@ -227,7 +227,6 @@ class HomePage extends StatelessWidget {
               '구매내역',
               style: TextStyle(fontSize: 18),
             ),
-
             trailing: Icon(Icons.arrow_forward_ios, color: Colors.black),
             onTap: () {
               /// 클릭시 drawer 닫기
@@ -239,7 +238,6 @@ class HomePage extends StatelessWidget {
               '저장한 레시피',
               style: TextStyle(fontSize: 18),
             ),
-
             trailing: Icon(Icons.arrow_forward_ios, color: Colors.black),
             onTap: () {
               /// 클릭시 drawer 닫기
