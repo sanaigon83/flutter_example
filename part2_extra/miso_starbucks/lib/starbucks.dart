@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:miso_starbucks/starbucks/firstpage/firstMainSliverToBox.dart';
 
@@ -8,14 +7,14 @@ Color starbucksPrimaryColor = Color.fromARGB(255, 83, 184, 138);
 // 포인트 색상
 Color starbucksAccentColor = Color.fromARGB(255, 199, 176, 121);
 
-class Startbucks extends StatefulWidget {
-  const Startbucks({super.key});
+class Starbucks extends StatefulWidget {
+  const Starbucks({super.key});
 
   @override
-  State<Startbucks> createState() => _StartbucksState();
+  State<Starbucks> createState() => _StarbucksState();
 }
 
-class _StartbucksState extends State<Startbucks> {
+class _StarbucksState extends State<Starbucks> {
   int currentIndex = 0;
 
   @override
@@ -24,9 +23,9 @@ class _StartbucksState extends State<Startbucks> {
       body: IndexedStack(
         index: currentIndex,
         children: [
-          StartbucksFirstPage(),
-          StartbucksSecondPage(),
-          StartbucksThirdPage(),
+          StarbucksFirstPage(),
+          StarbucksSecondPage(),
+          StarbucksThirdPage(),
           Center(
             child: (Text("Starbucks 네 번째 페이지")),
           ),
@@ -75,36 +74,12 @@ class _StartbucksState extends State<Startbucks> {
   }
 }
 
-class StartbucksFirstPage extends StatelessWidget {
-  const StartbucksFirstPage({super.key});
+class StarbucksFirstPage extends StatelessWidget {
+  const StarbucksFirstPage({super.key});
 
   /// 배경 이미지 URL
   final String backImg =
       "https://i.ibb.co/2Pz33q7/2021-12-16-12-21-42-cleanup.png";
-
-  /// 추천 메뉴
-  final List<Map<String, String>> recommendMenu = const [
-    {
-      "name": "돌체쿠키라떼",
-      "imgUrl": "https://i.ibb.co/SwGPpzR/9200000003687-20211118142543832.jpg",
-    },
-    {
-      "name": "아이스 홀리데이 돌체 쿠키 라떼",
-      "imgUrl": "https://i.ibb.co/JHVXZ72/9200000003690-20211118142702357.jpg",
-    },
-    {
-      "name": "스노우 민트 초콜릿",
-      "imgUrl": "https://i.ibb.co/M91G17c/9200000003693-20211118142933650.jpg",
-    },
-    {
-      "name": "아이스 스노우 민트 초콜릿",
-      "imgUrl": "https://i.ibb.co/jyZK4C9/9200000003696-20211118143125337.jpg",
-    },
-    {
-      "name": "스노우 민트 초콜릿 블렌디드",
-      "imgUrl": "https://i.ibb.co/DKkV0rw/9200000003699-20211118143249044.jpg",
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -344,8 +319,8 @@ class StartbucksFirstPage extends StatelessWidget {
   }
 }
 
-class StartbucksSecondPage extends StatelessWidget {
-  const StartbucksSecondPage({super.key});
+class StarbucksSecondPage extends StatelessWidget {
+  const StarbucksSecondPage({super.key});
 
   /// 카드 이미지
   final String cardImgUrl = "https://i.ibb.co/BgfYHg4/2021-12-16-1-49-51.png";
@@ -437,8 +412,8 @@ class StartbucksSecondPage extends StatelessWidget {
   }
 }
 
-class StartbucksThirdPage extends StatelessWidget {
-  const StartbucksThirdPage({super.key});
+class StarbucksThirdPage extends StatelessWidget {
+  const StarbucksThirdPage({super.key});
 
   /// 전체 메뉴
   final List<Map<String, String>> menu = const [
