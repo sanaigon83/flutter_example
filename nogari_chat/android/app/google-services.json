@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "489339297649",
+    "project_id": "chat-app-81850",
+    "storage_bucket": "chat-app-81850.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489339297649:android:5e9f2a5186e91e3c6c60d0",
+        "android_client_info": {
+          "package_name": "com.example.nogari_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489339297649-8fs15gqo8vh83plhq8e7baiddbojba3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuqwJ-YDx3dgk131gPid3zwkvUYE30Md0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489339297649-8fs15gqo8vh83plhq8e7baiddbojba3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
