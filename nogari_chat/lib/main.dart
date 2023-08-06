@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:nogari_chat/screen/chat_screen.dart';
 import 'package:nogari_chat/screen/main_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 Future<void> main() async {
   //Firebase 초기화
@@ -17,7 +19,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.blue),
-      home: LoginSigninScreen(),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (BuildContext context, AsyncSnapshot<User?> snapshot) {
+          if (snapshot.hasData) {
+            return ChatScreen();
+          } else {
+            return LoginSigninScreen();
+          }
+        },
+      ),
     );
   }
 }

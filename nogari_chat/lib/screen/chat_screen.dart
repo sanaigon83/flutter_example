@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:nogari_chat/chatting/chat/message.dart';
+import 'package:nogari_chat/chatting/chat/new_message.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -39,14 +42,16 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
             onPressed: () async {
               await _authentication.signOut();
-              Navigator.pop(context);
+              // Navigator.pop(context);
             },
             icon: Icon(Icons.exit_to_app_outlined),
           )
         ],
       ),
-      body: Center(
-        child: Text('채팅 화면'),
+      body: Container(
+        child: Column(
+          children: [Expanded(child: Messages()), NewMessage()],
+        ),
       ),
     );
   }
