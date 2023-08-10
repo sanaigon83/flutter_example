@@ -14,7 +14,6 @@ class _NewMessageState extends State<NewMessage> {
   var _userEnterMessage = '';
 
   final _contoller = TextEditingController();
-  final _user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +25,7 @@ class _NewMessageState extends State<NewMessage> {
         children: [
           Expanded(
             child: TextField(
+              maxLines: null, // TextField의 높이를 자동으로 조절
               controller: _contoller,
               decoration: InputDecoration(labelText: 'Send a message...'),
               onChanged: (value) {
@@ -49,8 +49,10 @@ class _NewMessageState extends State<NewMessage> {
   _sendMessage() async {
     FocusScope.of(context).unfocus();
 
+    final user = FirebaseAuth.instance.currentUser;
+
     await FirebaseFirestore.instance.collection('chat').add({
-      'user': _user!.uid,
+      'user': user!.uid,
       'text': _userEnterMessage,
       'createdAt': Timestamp.now(),
     });
