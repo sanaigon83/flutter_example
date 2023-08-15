@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:nogari_chat/chatting/chat/chat_bubble.dart';
+import 'package:nogari_chat/chatting/chat/chat_bubbles.dart';
 
 class Messages extends StatelessWidget {
   const Messages({super.key});
@@ -29,10 +29,12 @@ class Messages extends StatelessWidget {
           itemCount: chatDocs.length,
           itemBuilder: (BuildContext context, int index) {
             final myMessage = chatDocs[index]['user'] == _user!.uid;
+            final userName = chatDocs[index]['userName'];
 
-            return ChatBubble(
+            return ChatBubbles(
               message: chatDocs[index]['text'],
               isMyMessage: myMessage,
+              userName: userName,
             );
           },
         );

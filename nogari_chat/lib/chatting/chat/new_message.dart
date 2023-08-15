@@ -51,10 +51,16 @@ class _NewMessageState extends State<NewMessage> {
 
     final user = FirebaseAuth.instance.currentUser;
 
+    final userData = await FirebaseFirestore.instance
+        .collection('user')
+        .doc(user!.uid)
+        .get();
+
     await FirebaseFirestore.instance.collection('chat').add({
       'user': user!.uid,
       'text': _userEnterMessage,
       'createdAt': Timestamp.now(),
+      'userName': userData.data()!['userName']
     });
 
     _contoller.clear();
